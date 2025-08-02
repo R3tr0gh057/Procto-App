@@ -14,11 +14,11 @@ const Header = () => {
           </div>
           <nav className="hidden md:flex md:space-x-8">
             <Link href="/doctors" className="text-gray-700 hover:text-blue-700 font-medium">Find Doctors</Link>
-            <a href="#" className="text-gray-700 hover:text-blue-700 font-medium">Video Consult</a>
-            <a href="#" className="text-gray-700 hover:text-blue-700 font-medium">Surgeries</a>
+            <Link href="/video-consult" className="text-gray-700 hover:text-blue-700 font-medium">Video Consult</Link>
+            <Link href="/surgeries" className="text-gray-700 hover:text-blue-700 font-medium">Surgeries</Link>
           </nav>
           <div className="hidden md:flex items-center space-x-4">
-            <a href="#" className="text-xs bg-blue-100 text-blue-700 px-3 py-2 rounded font-semibold">For Corporates</a>
+            <Link href="/corporates" className="text-xs bg-blue-100 text-blue-700 px-3 py-2 rounded font-semibold">For Corporates</Link>
           </div>
           <div className="md:hidden">
             <button type="button" className="text-gray-500 hover:text-blue-700">

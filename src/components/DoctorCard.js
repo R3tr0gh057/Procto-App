@@ -3,6 +3,7 @@
 import React from 'react';
 import { ThumbsUp, CheckCircle } from 'lucide-react';
 import Image from 'next/image'; // Use Next.js Image for optimization
+import Link from 'next/link';
 
 const DoctorCard = ({ doctor }) => {
   return (
@@ -19,7 +20,9 @@ const DoctorCard = ({ doctor }) => {
       </div>
       {/* Info */}
       <div className="flex-1 text-left w-full">
-        <h3 className="text-lg font-bold text-blue-800 leading-tight hover:underline cursor-pointer">{doctor.name}</h3>
+        <Link href={`/doctors/${doctor.id}`} className="text-lg font-bold text-blue-800 leading-tight hover:underline cursor-pointer">
+          {doctor.name}
+        </Link>
         <div className="text-sm text-blue-700 font-medium mb-1">{doctor.specialization}</div>
         <div className="text-gray-600 text-sm mb-1">{doctor.experience} years experience overall</div>
         <div className="text-gray-700 text-sm mb-1">{doctor.location} <span className="text-gray-400">•</span> {doctor.clinic}</div>
@@ -36,8 +39,12 @@ const DoctorCard = ({ doctor }) => {
         ) : (
           <span className="text-red-500 text-xs font-semibold mb-1">Unavailable</span>
         )}
-        <button className="w-full md:w-auto bg-blue-600 text-white px-5 py-2 rounded font-semibold hover:bg-blue-700 transition-colors text-sm">Book Clinic Visit</button>
-        <button className="w-full md:w-auto border border-blue-600 text-blue-700 px-5 py-2 rounded font-semibold hover:bg-blue-50 transition-colors text-sm">Contact Clinic</button>
+        <Link href={`/doctors/${doctor.id}`} className="w-full md:w-auto bg-blue-600 text-white px-5 py-2 rounded font-semibold hover:bg-blue-700 transition-colors text-sm text-center">
+          Book Clinic Visit
+        </Link>
+        <Link href={`/doctors/${doctor.id}`} className="w-full md:w-auto border border-blue-600 text-blue-700 px-5 py-2 rounded font-semibold hover:bg-blue-50 transition-colors text-sm text-center">
+          Contact Clinic
+        </Link>
       </div>
     </div>
   );
